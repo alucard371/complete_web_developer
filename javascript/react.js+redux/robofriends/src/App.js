@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
-import { robots } from "./robots";
-import './App.css';
+import "./App.css";
 
 class App extends Component {
 	constructor() {
@@ -12,12 +11,16 @@ class App extends Component {
 			robots: [],
 			searchfield: ""
 		};
-		console.log('constructor');
-	};
+	}
 
 	componentDidMount() {
-		this.setState({robots: robots});
-		console.log('componentDidMount');
+		fetch("https://jsonplaceholder.typicode.com/users")
+			.then(response => {
+				return response.json();
+			})
+			.then(users => {
+				this.setState({ robots: users });
+			});
 	}
 
 	//old syntax
@@ -28,7 +31,6 @@ class App extends Component {
 	/*		return robots.name
 				.toLowerCase()
 				.includes(this.state.searchfield.toLowerCase());*/
-	
 
 	onSearchChange = event => {
 		//to change the state always use setState, not state
@@ -36,7 +38,6 @@ class App extends Component {
 	};
 
 	render() {
-		console.log('render');
 		//rule of thumbs: Use The Arrow Function
 		const filteredRobots = this.state.robots.filter(robots => {
 			return robots.name
@@ -45,7 +46,7 @@ class App extends Component {
 		});
 		return (
 			<div className="tc">
-				<h1 className='f2'>RoboFriends</h1>
+				<h1 className="f2">RoboFriends</h1>
 				<SearchBox searchChange={this.onSearchChange} />
 				<CardList robots={filteredRobots} />
 			</div>
