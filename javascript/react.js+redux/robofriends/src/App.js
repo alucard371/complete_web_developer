@@ -9,10 +9,16 @@ class App extends Component {
 		super();
 		//you can't use this whithout super(); cf advanced objects
 		this.state = {
-			robots: robots,
+			robots: [],
 			searchfield: ""
 		};
+		console.log('constructor');
 	};
+
+	componentDidMount() {
+		this.setState({robots: robots});
+		console.log('componentDidMount');
+	}
 
 	//old syntax
 
@@ -30,6 +36,7 @@ class App extends Component {
 	};
 
 	render() {
+		console.log('render');
 		//rule of thumbs: Use The Arrow Function
 		const filteredRobots = this.state.robots.filter(robots => {
 			return robots.name
