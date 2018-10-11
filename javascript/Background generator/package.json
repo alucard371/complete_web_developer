@@ -1,0 +1,25 @@
+{
+  "name": "Background-generator",
+  "description": "A background generator project",
+  "version": "0.1.0",
+  "homepage": "https://github.com/alucard371/Background%20generator",
+  "author": "QBL",
+  "repository": "alucard371/Background%20generator",
+  "bugs": {
+    "url": "https://github.com/alucard371/Background%20generator/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "build": "browserify script.js > bundle.js && live-server"
+  },
+  "keywords": [
+    "Background",
+    "generator"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

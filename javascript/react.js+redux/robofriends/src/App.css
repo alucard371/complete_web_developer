@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'SEGA';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/SEGA.eot');
+    src: url('fonts/SEGA.eot') format('embedded-opentype'),
+         url('fonts/SEGA.woff2') format('woff2'),
+         url('fonts/SEGA.woff') format('woff'),
+         url('fonts/SEGA.ttf') format('truetype'),
+         url('fonts/SEGA.svg#SEGA') format('svg');
+}
+
+h1 {
+	font-family: 'SEGA';
+	font-weight: 200;
+	color: #0ccac4;
+}
